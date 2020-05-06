@@ -7,16 +7,17 @@
   - ##### Create socket to communicate
   - ##### Generate DH key and extract its params(prime, generator) with openssl and set in both client and server code
   - ##### Use P(prime), G(generator) to generate public and private key in each side
-  - ##### Choose a random number less than P as private key then public key will be (Publick key = power(G, private key) mod P
-  - ##### Send Public key to other side and recieve a public key from other side and calculate Session key (session key = power(received key, private key) mod P
+  - ##### Choose a random number less than P as private key then public key will be (Publick key = power(G, private key) mod P)
+  - ##### Send Public key to other side and recieve a public key from other side and calculate Session key (session key = power(received key, private key) mod P)
   - ##### encrypt messages from user with AES with session 128-bit key using javax.crypto package and send to other side then receive reply from other side and decrypt it and show message
   
 ## opessl
 ##### Generate DH key as dhp.pem and extract its components using openssl:
 ####
 ```
-    openssl pkeyparam -in dhp.pem -text
     openssl dhparam -out dhp.pem 128
+    
+    openssl pkeyparam -in dhp.pem -text
 ```
 
 ## Server and client code
